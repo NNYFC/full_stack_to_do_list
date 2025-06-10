@@ -22,7 +22,10 @@ Inorder to start the backend, make sure to set all environment variables need
  - DATABASE_PASSWORD
  - DATABASE_NAME
  - DATABASE_USERNAME
+ - HOST_URL
 
 Once set, run `npm start`
+
+You can access the API documentation ([Swaggger](https://swagger.io/docs/)) base on the <b>HOST_URL</b> + <b>PORT</b> set in environment variable and add <b>/api-docs/</b> at the end. to give ``http://localhost:3000/api-docs/`` in case running it locally.
 
 ### Starting Frontend

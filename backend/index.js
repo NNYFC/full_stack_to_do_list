@@ -1,18 +1,22 @@
 const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
+const bodyParser = require('body-parser')
+
+const todo_routes = require('./routes/todo_routes');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 require('dotenv').config();
 
-const { pool } = require("./db_config");
+// parse application/json
+app.use(bodyParser.json())
 
 // Swagger setup
 const swaggerConfig = {
     swaggerDefinition: {
-      todo_list: '1.0.0',
+      openapi: '3.0.0',
       info: {
         title: 'TODO API',
         version: '1.0.0',
@@ -20,7 +24,7 @@ const swaggerConfig = {
       },
       servers: [
         {
-          url: 'http://localhost:3000',
+          url: process.env.HOST_URL+':'+process.env.PORT,
         },
       ],
     },
@@ -45,6 +49,8 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.get('/', (req, res) => {
   res.send('Welcome to the TODO list Rest API!')
 });
+
+app.use('/todos', todo_routes);
 
 app.listen(port, () => {
   console.log(`TODO API listening on port ${port}`)
