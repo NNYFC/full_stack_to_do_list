@@ -11,7 +11,7 @@ To update your version of npm you can run `npm install -g npm@10.8.1`
 
 ### 2. Frontend set-up
 Using the same configuration above for the backend set-up, just the below additional setup is needed
-- Install [angular-cli >= 19.1.3](https://angular.dev/tools/cli/setup-local) by running `npm install -g @angular/cli@19.1.3`
+- Install [angular-cli >= 17.3.9](https://angular.dev/tools/cli/setup-local) by running `npm install -g @angular/cli@17.3.9`
 
 
 ### Starting Backend
@@ -29,3 +29,10 @@ Once set, run `npm start`
 You can access the API documentation ([Swaggger](https://swagger.io/docs/)) base on the <b>HOST_URL</b> + <b>PORT</b> set in environment variable and add <b>/api-docs/</b> at the end. to give ``http://localhost:3000/api-docs/`` in case running it locally.
 
 ### Starting Frontend
+Inorder to start the frontend, position in <b>frontend</b> folder and run `npm install` to download all dependencies necessary for the application. 
+
+Once execution completed:
+ run `ng serve` to start the application.
+ run `ng build` to build the application, a <b>dist</b> folder will be created which is the build result.
+
+The application can be access locally through ``http://localhost:4200/``
