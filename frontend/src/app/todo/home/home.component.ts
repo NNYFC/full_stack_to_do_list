@@ -10,6 +10,4 @@ import { InsertComponent } from '../insert/insert.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-   isModalCall:boolean = false;
-
 }
